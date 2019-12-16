@@ -148,9 +148,15 @@ const SignUpComponent = ( 'sign-up-component', {
   },
   template: `
   <v-container fluid fill-height>
+
    <v-stepper v-model="stage" dark
               class="dark-card mx-auto"
               v-if="user">
+    <v-stepper-header flat>
+        <v-card flat class="transparent warning--text my-6 mx-auto">
+          Sign Up
+        </v-card>
+    </v-stepper-header>
     <v-stepper-header dark>
           <v-stepper-step :complete="validLogin"
                           step="1"
