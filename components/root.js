@@ -72,6 +72,11 @@ export default {
 
     })
 
+    this.$on ( "sign-up", function () {
+      this.sign_in_process = false
+      this.sign_up_process = true
+    })
+
     this.$on ( 'sign-up-finished', function () {
         this.sign_up_process = false
     })

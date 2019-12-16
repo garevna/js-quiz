@@ -79,11 +79,16 @@ const LoginComponent = ( 'login-component', {
 			this.validPassword ? this.setUserData () :
           this.$root.$store.commit ( "breakUser" )
 			this.$root.$emit ( "sign-in-finished" )
+      console.clear()
 		},
 
     exit () {
         this.$root.$emit ( "sign-in-finished" )
         console.clear()
+    },
+    signUp () {
+      this.$root.$emit ( "sign-up" )
+      console.clear()
     },
 
     setUserData () {
@@ -138,6 +143,8 @@ const LoginComponent = ( 'login-component', {
         </v-btn>
 
         <v-btn transparent text @click="exit">Cancel</v-btn>
+
+        <v-btn transparent text @click="signUp" class="warning--text">Sign Up</v-btn>
       </v-stepper-content>
 
       <v-stepper-content step="2">
