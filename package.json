@@ -7,7 +7,7 @@
     "github-build": "vite build --base=/js-quiz/",
     "lint": "vue-cli-service lint",
     "dev": "vite",
-    "deploy": "git add dist && git commit -m 'Initial dist subtree commit' && git subtree push --prefix dist origin master:gh-pages"
+    "deploy": "git add dist && git commit -m 'dist subtree commit' && git subtree push --prefix dist origin master:gh-pages"
   },
   "dependencies": {
     "core-js": "^3.8.3",
