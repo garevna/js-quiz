@@ -55,30 +55,40 @@ const vuetify = createVuetify({
 
 import { canvasWidth, canvasHeight } from '@/configs'
 
-import { mainMenuItems } from '@/mainMenuItems'
+// import { mainMenuItems } from '@/mainMenuItems'
 
-import { getHost } from '@/globalState'
+import { init } from '@/init'
 
-const items = await (await fetch(`${getHost()}/mainMenuData.json`)).json()
-const levels = await (await fetch(`${getHost()}/levels.json`)).json()
+// const items = await (await fetch(`${getHost()}/mainMenuData.json`)).json()
+// const levels = await (await fetch(`${getHost()}/levels.json`)).json()
 
-const mainMenuFolders = items.map(item => item.folder)
+// const mainMenuFolders = items.map(item => item.folder)
 
 // console.warn(mainMenuFolders.filter(folder => !levels[folder]))
 // console.warn(Object.keys(levels).filter(key => !mainMenuFolders.includes(key)))
 
-items.forEach(item => {
-  const level = levels[item.folder]
-  Object.assign(item, { levels: level })
+// items.forEach(item => {
+//   const level = levels[item.folder]
+//   Object.assign(item, { levels: level })
+// })
+//
+// mainMenuItems(items)
+
+init().then(() => {
+  createApp(App)
+    .use(vuetify)
+    .mount('#js-quiz')
+
+  const root = document.querySelector(':root')
+  root.style.setProperty('--canvas-width', canvasWidth + 'px')
+  root.style.setProperty('--canvas-height', canvasHeight + 'px')
 })
 
-mainMenuItems(items)
+// createApp(App)
+//   .use(vuetify)
+//   .mount('#js-quiz')
 
-createApp(App)
-  .use(vuetify)
-  .mount('#js-quiz')
-
-const root = document.querySelector(':root')
-
-root.style.setProperty('--canvas-width', canvasWidth + 'px')
-root.style.setProperty('--canvas-height', canvasHeight + 'px')
+// const root = document.querySelector(':root')
+//
+// root.style.setProperty('--canvas-width', canvasWidth + 'px')
+// root.style.setProperty('--canvas-height', canvasHeight + 'px')

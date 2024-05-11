@@ -52,6 +52,12 @@ export default {
     'show-slogans': ShowSlogans
   },
 
+  methods: {
+    windowResized () {
+      //
+    }
+  },
+
   async created () {
     provideGlobalData()
     provideQuizData()
