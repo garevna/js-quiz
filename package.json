@@ -1,12 +1,14 @@
 {
   "name": "js-quiz",
   "version": "2.0.0",
+  "license": "MIT",
   "scripts": {
     "serve": "vite preview",
     "build": "vite build",
     "github-build": "vite build --base=/js-quiz/",
     "lint": "vue-cli-service lint",
     "dev": "vite",
+    "ls": "git ls-files --cached",
     "deploy": "git add dist && git commit -m 'dist subtree commit' && git subtree push --prefix dist origin master:gh-pages"
   },
   "dependencies": {
