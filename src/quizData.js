@@ -5,6 +5,7 @@ import { getHost } from '@/globalState'
 import { parseQuizFile } from '@/helpers'
 
 import { getCurrentState } from '@/helpers'
+
 const { folder, title, levels, lives, score, maxScore, currentLevel } = getCurrentState()
 
 const createQuizState = () => reactive({

@@ -134,6 +134,15 @@ export default {
     this.state = injectGlobalData()
     this.quizData = injectQuizData()
     this.quizLevelData = injectQuizLevelData()
+  },
+
+  mounted () {
+    // const target = location.hash ? location.hash.slice(1) : null
+    const currentQuiz = localStorage.getItem('current-quiz')
+    const currentQuizData = currentQuiz ? JSON.parse(currentQuiz) : null
+    if (this.quizData.folder !== currentQuizData.folder) {
+      Object.assign(this.quizData, currentQuizData)
+    }
   }
 }
 </script>

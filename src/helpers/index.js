@@ -1,5 +1,5 @@
 import { minify } from './minify'
-// import { findError } from './findError'
+import { getMaxScore } from './getMaxScore'
 import { parseQuizFile } from './parseQuizFile'
 import { selectText } from './selectText'
 import { getCurrentState } from './getCurrentState'
@@ -20,7 +20,7 @@ export {
   sloganGenerator,
   sloganIndexGenerator,
   minify,
-  // findError,
+  getMaxScore,
   parseQuizFile,
   selectText,
   getCurrentState

@@ -228,15 +228,6 @@ export default {
 
         this.state.quizReady = true
       } else this.finish()
-      // } else {
-      //   Object.assign(this.quizLevelData, {
-      //     type: 'finish',
-      //     balls: 0,
-      //     question: 'Results'
-      //   })
-      //
-      //   this.state.quizReady = true
-      // }
 
       localStorage.setItem('current-quiz', JSON.stringify(this.quizData))
     },
